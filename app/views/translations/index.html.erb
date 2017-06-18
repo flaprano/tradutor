@@ -1,7 +1,9 @@
+<%= nav_bar brand: "Tradutor", brand_link: root_path %>
+<div class="container">
 <h1>Lista de Traduções</h1>
 
-<table class="table table-bordered">
-  <thead>
+<table class="table">
+  <thead style="font-weight: bold;">
     <tr>
       <td>Texto Português</td>
       <td>Texto Inglês</td>
@@ -12,12 +14,13 @@
       <tr>
         <td><%= translation.texto_portugues %></td>
         <td><%= translation.texto_ingles %></td>
-        <td><%= link_to 'Verificar', translation %></td>
-        <td><%= link_to 'Editar', edit_translation_path(translation.id) %></td>
-        <td><%= link_to 'Remover', translation, method: :delete %></td>
+        <td><%= button_to 'Verificar', translation, method: :get, class: "btn btn-info"  %></td>
+        <td><%= button_to 'Editar', { action: 'edit', id: translation.id}, method: :get, class: "btn btn-warning"  %></td>
+        <td><%= button_to 'Remover', translation, method: :delete, data: { confirm: "Certeza que deseja remover?" }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to('Adicionar Tradução', new_translation_path) %>
+<%= button_to 'Adicionar Tradução', new_translation_path, method: :get, class: "btn btn-success" %>
+</div>

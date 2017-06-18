@@ -1,3 +1,5 @@
-<p>A tradução de <%= @translation.texto_portugues%> é <%=@translation.texto_ingles%>
-<br />
-<%= link_to('Voltar', root_path) %>
+<%= nav_bar brand: "Tradutor", brand_link: root_path %>
+<div class="container">
+  <h3>A tradução de <%= @translation.texto_portugues%> é <%=@translation.texto_ingles%></h3>
+  <%= button_to 'Voltar', root_path, method: :get, class: 'btn btn-primary' %>
+</div>
