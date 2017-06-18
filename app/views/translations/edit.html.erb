@@ -1,0 +1,15 @@
+<h1>Editar Tradução</h1>
+
+<%= form_for @translation, url: translation_path do |f| %>
+
+  <%= f.label :texto_portugues %>
+  <%= f.text_field :texto_portugues %>
+  <br />
+  <%= f.label :texto_ingles %>
+  <%= f.text_field :texto_ingles %>
+  <br />
+  <%= f.submit 'Editar'%>
+
+<% end %>
+
+<%= link_to('Voltar', :root) %>

@@ -1,0 +1,23 @@
+<h1>Lista de Traduções</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>Texto Português</td>
+      <td>Texto Inglês</td>
+    </td>
+  </thead>
+  <tbody>
+    <% @translations.each do |translation| %>
+      <tr>
+        <td><%= translation.texto_portugues %></td>
+        <td><%= translation.texto_ingles %></td>
+        <td><%= link_to 'Verificar', translation %></td>
+        <td><%= link_to 'Editar', edit_translation_path(translation.id) %></td>
+        <td><%= link_to 'Remover', translation, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to('Adicionar Tradução', :new_translation) %>
