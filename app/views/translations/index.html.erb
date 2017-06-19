@@ -2,6 +2,7 @@
 <div class="container">
 <h1>Lista de Traduções</h1>
 
+<% unless @translations.empty? %>
 <table class="table">
   <thead style="font-weight: bold;">
     <tr>
@@ -21,6 +22,7 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <%= link_to 'Adicionar Tradução', new_translation_path, class: "btn btn-success" %>
 </div>
